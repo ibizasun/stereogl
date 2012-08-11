@@ -1,0 +1,105 @@
+% August 2012
+% Autor: Michael Meese & Thomas Fromme
+% Universität Freiburg 
+%www.fh-bielefeld.de
+
+\documentclass{beamer} 								% Standardklasse für Beamer
+	%\documentclass[handout]{beamer}  			% druckoptimiert (handouts)
+   	%\documentclass[draft]{beamer}					% Entwickler-Modus in dem das File schneller kompiliert wird
+	%\documentclass{article}							% Artikel-Version; Funktioniert nur, wenn man zusätzlich das Paket beamerarticle mittels \usepackage{beamerarticle} einbindet.
+
+\usetheme{progressbar}
+\usepackage[ngerman]{babel}
+\usepackage[utf8x]{inputenc}
+	%\usepackage[latin1]{inputenc}						% Für Windows
+	% \usepackage[ansinew]{inputenc} 				% Für Windows
+
+\usepackage{amsmath,amsfonts,amssymb}
+	\progressbaroptions{imagename=fhlogo}
+	\usecolortheme{default}							% albatross | beaver | beetle | crane | default | dolphin | dove | fly | lily | orchid | rose |seagull | seahorse | sidebartab | structure | whale | wolverine
+	\usefonttheme{professionalfonts}	
+															% default | professionalfonts | serif | structurebold | structureitalicserif | structuresmallcapsserif
+	\useinnertheme{inmargin}
+															% circles | default | inmargin | rectangles | rounded
+	\useoutertheme{smoothbars}
+															% default | infolines | miniframes | shadow | sidebar | smoothbars | smoothtree | split | tree
+	%\setbeamercovered{transparent}				% halbtransparente Overlays auf seinen Folien
+	%\beamertemplatenavigationsymbolsempty	% abschalten der Navigationselemente
+	%\setbeamertemplate{footline}[frame number]	% Seitenzahlen in Fußzeile einfügen
+
+
+\begin{document}
+	\title[Abbrev. Title\hspace{2em}\insertframenumber/
+		\inserttotalframenumber]{Stereoskopie}
+	\author{Michael Meese & Thomas Fromme} 
+
+	\date{\today}
+	%\logo{\includegraphics[scale=0.14]fhlogo}}
+
+	
+	%\title[Kurzform]{Vortrag zur Berechenbarkeit}		% Titel des Vortrages
+	%\subtitle[Kurzform]{Untertitel}											% Untertitel
+	 \author[T.Fromme]{Thomas Fromme}							% Autor festlegen
+	 \institute[FB2 -- FH-Bielefeld]{University of Applied Sciences}
+																													% Angabe des Institutes
+
+	%\date[26.05.06]{26. Mai 2006}											%Datum der Präsentation, alternativ kann mittels \date{\today} auch das aktuelle Datum eingetragen werden.
+\logo{\pgfimage[width=2cm,height=2cm]{img/fhlogo}}
+  																%Die Datei hulogo.pdf (bzw. hulogo.png, hulogo.jpg, hulogo.mps bei Verwendung von 
+																%pdftex als Backend) als Logo auf allen Folien, hier mithilfe des Paketes pgf.
+\titlegraphic{\includegraphics[width=2cm,height=2cm]{img/fhlogo}}
+																%Die Datei hulogo.pdf (bzw. analog wie bei \logo auch entsprechendes Format) als Logo
+																%nur auf der Titelseite unter Verwendung des Paketes graphicx.
+\subject{Stereoskopie}									%Setzt Thema in den PDF-Dokument-Eigenschaften
+\keywords{Stereoskopie, OpenGL, OpenCL}				%Setzt Schlüsselwörter in den PDF-Dokument-Eigenschaften
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}
+	\frametitle{Inhaltsverzeichnis}\tableofcontents
+\end{frame}
+%##########################################################################################%
+%##########################################################################################%
+%##########################################################################################%
+%\part[Kurzform]{Name}					%Bei Lesungen mit mehreren Vorträgen bietet sich eine Unterteilung in Parts an, da dann jeder Vortrag mit eigenem Inhaltsverzeichnis und Navigationsstrukturen aufwartet.
+%\section[Kurzform]{Name}					%Erzeugt eine neuen Abschnitt mit entsprechendem Namen
+%\subsection[Kurzform]{Name}				%Erzeugt einen neuen Unterabschnitt mit entsprechendem Namen 
+%##########################################################################################%
+%##########################################################################################%
+%##########################################################################################%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section[Quellen]{Referezen}
+\begin{frame}\frametitle{Quellen \& Literatur}
+%\begin{thebibliography}{1}
+%\bibitem[Stereoskopie]{bpt} \emph{Stereoskopie} \\
+%\url{http://stereoskopie.com} [Abruf: 16.03.2010]\\
+%\end{thebibliography}
+
+\begin{thebibliography}{1}
+\bibitem[ ]{bpt} \emph{ } \\
+\url{http:// } [Abruf: 20.07.2012]\\
+\end{thebibliography}
+
+\begin{thebibliography}{2}
+\bibitem[ ]{bpt} \emph{ } \\
+\url{http:// } [Abruf: 20.07.2012]\\
+\end{thebibliography}
+
+\end{frame}
+\end{document}
