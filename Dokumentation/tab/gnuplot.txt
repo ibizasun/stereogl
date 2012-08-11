@@ -1,0 +1,56 @@
+plot "tab1.txt" using 1:2 title "Hochpass" with linespoints 1 1 
+set logscale x
+set xlabel "f[kHz]"
+set xrange [1:100]
+set ylabel "a[dB]"
+set yrange [-20:0]  
+replot
+set grid
+replot
+set terminal postscript color solid
+set output "hochpass1.ps"          
+plot "tab1.txt" using 1:2 title "Hochpass" with linespoints 1 1
+quit
+
+plot "tab2.txt" using 1:2 title "Hochpass" with linespoints 1 1 
+set logscale x
+set xlabel "f[kHz]"
+set xrange [1:100]
+set ylabel "delta phi[°]"  
+set yrange [-5:125]
+replot
+set grid
+replot
+set terminal postscript color solid
+set output "hochpass2.ps"          
+plot "tab2.txt" using 1:2 title "Hochpass" with linespoints 1 1
+quit
+
+plot "tab3.txt" using 1:2 title "Bandpass" with linespoints 1 1 
+set logscale x
+set xlabel "f[kHz]"
+set xrange [20:45]
+set ylabel "a[dB]"
+set yrange [-23:0]
+replot
+set grid
+replot
+set terminal postscript color solid
+set output "bandpass1.ps"          
+plot "tab3.txt" using 1:2 title "Bandpass" with linespoints 1 1
+quit
+
+plot "tab4.txt" using 1:2 title "Bandpass" with linespoints 1 1 
+set logscale x
+set xlabel "f[kHz]"
+set xrange [20:45]
+set ylabel "delta phi[°]"  
+set yrange [-100:100]
+replot
+set grid
+replot
+set terminal postscript color solid
+set output "bandpass2.ps"          
+plot "tab4.txt" using 1:2 title "Bandpass" with linespoints 1 1
+quit
+

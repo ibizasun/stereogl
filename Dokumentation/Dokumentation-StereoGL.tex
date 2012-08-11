@@ -1,0 +1,137 @@
+%Schriftgröße, Layout, Papierformat, Art des Dokumentes
+\documentclass[footsepline,11pt,oneside,a4paper]{scrartcl}
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{scrpage2}
+%mathem. funktionen
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%Umlaute ermöglichen
+\usepackage[utf8]{inputenc}
+%alte Rechtschreibung
+\usepackage{german}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage[backend]{graphicx}
+\usepackage{color}
+\usepackage{units}
+\usepackage{latexsym}
+\usepackage{kpfonts}
+\usepackage{fourier}
+\author{Michael Meese / Thomas Fromme}
+\title{Dokumentation Stereoskopie / StereoGL}
+%\setheadwidth{1.5cm}
+
+\newcommand{\hertz}[1]{\unit{#1}{Hz}}
+\defpagestyle{GD}{%
+  {\hfill}{\hfill}{\includegraphics[width=\textwidth]{img/fhlogoGD}}%
+}{%
+	{\pagemark\hfill}{\hfill\pagemark}{%
+		Dokumentation: Grafische Datenvearbeitung	(M.Meese /T.Fromme)\hfill\pagemark}
+}
+
+
+\title{\hfill\\Stereoskopie in der grafischen Datenverarbeitung }
+\author{%
+	\begin{tabular}[c]{rl}
+		Michael Meese & Mat. Nr. : 206 \\
+		Thomas Fromme & Mat. Nr. : 206650 \\
+	\end{tabular}
+}
+\date{%
+	\begin{tabular}[c]{rl}
+%		Versuchstag : &  \\
+		Dokumentationsausarbeitung vom : & \today \\
+	\end{tabular}
+}
+
+\begin{document}
+\renewcommand{\titlepagestyle}{GD}
+\maketitle
+\pagestyle{GD}
+
+\newpage
+\newline
+\tableofcontents
+
+
+\newpage
+\section{Geschichte und Konzept von stereoskopischen Bildern}
+\subsection{Geschichte von stereoskopischen Bildern}
+\newline
+\newline
+
+\newline
+\newline
+\newline
+\newline
+
+\subsection{Konzept von stereoskopischen Bildern}
+\newline
+\newline
+
+
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+
+\subsection{ }
+\newline
+\newline
+
+\begin{tabbing}
+\hspace{30}\=\kill
+\textbullet \>  \\
+\textbullet \>  \\
+\textbullet \>  \\
+\textbullet \>  \\
+\textbullet \>  \\
+\end{tabbing}
+\newpage
+
+\par
+\subsection{Formeln}
+\newline
+\begin{center}
+\large\underline{ }
+\end{center}
+\newline
+\newline
+\newline
+\newline
+
+\begin{displaymath}
+
+\end{displaymath}
+\newline
+\newline
+
+\newline
+\newpage
+
+\subsection{Implementation mit der OpenGL Bibliothek}
+\newline
+
+
+
+\newpage
+\section{Diskussion und Vergleich beider Messverfahren}
+\begin{center}
+\textbf{Vergleich Oszilloskop und Timer / Counter }
+\end{center}
+\newline
+\newline
+
+
+\newline
+\newpage
+\section{Anhang:}
+
+\newpage
+\section{Quellen:}
+
+\end{document}

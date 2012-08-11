@@ -1,0 +1,331 @@
+%Schriftgröße, Layout, Papierformat, Art des Dokumentes
+\documentclass[footsepline,11pt,oneside,a4paper]{scrartcl}
+
+\usepackage[left=3cm,right=2cm,top=2cm,bottom=2cm,headsep=3pt,headheight=1.7cm,includehead,includefoot]{geometry}
+\usepackage{scrpage2}
+%mathem. funktionen
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%Umlaute ermöglichen
+\usepackage[utf8]{inputenc}
+%alte Rechtschreibung
+\usepackage{german}
+
+\usepackage{graphicx}
+\usepackage[backend]{graphicx}
+\usepackage{color}
+\usepackage{units}
+\usepackage{latexsym}
+%\setheadwidth{1.5cm}
+
+\newcommand{\hertz}[1]{\unit{#1}{Hz}}
+\defpagestyle{ETM}{%
+  {\hfill}{\hfill}{\includegraphics[width=\textwidth]{img/FH-Logo+ETM+Praktikum}}%
+}{%
+	{\pagemark\hfill}{\hfill\pagemark}{%
+		ETM-Praktikum 2	 (Thomas Fromme)\hfill\pagemark}
+}
+
+
+\title{\hfill\\Messungen an Filterschaltungen}
+\author{%
+	\begin{tabular}[c]{rl}
+		Thomas Fromme & Mat. Nr. : 206650 \\
+	\end{tabular}
+}
+\date{%
+	\begin{tabular}[c]{rl}
+		Versuchstag : & 13. November 2007 \\
+		Protokoll vom : & \today \\
+	\end{tabular}
+}
+
+\begin{document}
+\renewcommand{\titlepagestyle}{ETM}
+\maketitle
+\pagestyle{ETM}
+
+\newpage
+\newline
+\tableofcontents
+
+
+\newpage
+\section{Beschreibung des Versuchs}
+\subsection{Einleitung}
+\newline
+\newline
+
+Der Versuch ist am 13.11.2007 um 11.00 Uhr von Hanno Meyer-Thurow, Thomas Fromme und Tobias Finkemeier an der FH Bielefeld, Fachbereich 2/3, durchgeführt worden. \\
+\newline
+Ermitteln der Grenz- und Mittenfrequenz an einer Hochpass- und Bandpassfilterschaltung, sowie Amplituden- und Phasengang.
+\newline
+\newline
+\newline
+\newline
+
+\subsection{Kurzbeschreibung}
+\newline
+\newline
+
+In diesem Versuch wird der Amplituden- und Phasengang von passiven Filterschaltungen ( Hochpass und Bandpass ) durch vergleichende Messungen mit Oszilloskop und Timer / Counter ermittelt. 
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+
+\subsection{Benötigte Messgeräte}
+\newline
+\newline
+
+\begin{tabbing}
+
+\hspace{30}\=\kill
+\textbullet \> Frequenzgenerator \\
+\textbullet \> Filter \\
+\textbullet \> Messkabel \\
+\textbullet \> Timer / Counter (PM6670) \\
+\textbullet \> Oszilloskop \\
+
+\end{tabbing}
+
+\newpage
+
+\par
+\subsection{Vorgaben und benötigte Formeln}
+\newline
+\begin{center}
+\large\underline{Zur Bestimmung der Grenzfrequenz beim Hochpass 1.Ordnung}
+\end{center}
+\newline
+\newline
+\newline
+\newline
+
+\begin{displaymath}
+f_{Grenz}\ = \frac{1}{2* \pi * R * C}
+\end{displaymath}
+\newline
+\newline
+\begin{displaymath}
+\frac{U_{A}}{U_{E}}\  = \frac{1}{ \sqrt{2} } = 0,707
+\end{displaymath}
+\newline
+\newline
+\begin{displaymath}
+a  = 20 log \frac {U_{A} }{ U_{E} } = -3dB 
+\end{displaymath}
+\newline
+\begin{displaymath}
+\varphi = 45°
+\end{displaymath}
+\newline
+\newline
+\newline
+\newline
+\begin{center}
+\large\underline{Kriterien zur Mittenfrequenzbestimmung des Bandpasses}
+\end{center}
+\newline
+\newline
+\newline
+\newline
+
+\begin{displaymath}
+f_{Mitten}\ = \frac{1}{2* \pi * \sqrt{R * C}}
+\end{displaymath}
+\newline
+\newline
+\begin{displaymath}
+\frac{U_{A}}{U_{E}}\  = max 
+\end{displaymath}
+\newline
+\begin{displaymath}
+\varphi = 0°
+\end{displaymath}
+\newline
+\newline
+\newline
+\begin{center}
+\underline{Phasenverschiebung}
+\end{center}
+\newline
+\begin{displaymath}
+Phasenverschiebung = \frac{\sum + \varphi}{ n * T} * 360°
+\end{displaymath}
+\newline
+\newpage
+
+\subsection{Aufbau und Durchführung des Versuchs}
+\newline
+\begin{center}
+Aufbau des Versuchs für die beiden Messreihen
+\end{center}
+\newline
+\includegraphics[scale=1]{img/etm2-p1.eps} 
+\newline
+\begin{center}
+Versuch zur Bestimmung der Hochpassfilterschaltung
+\end{center}
+\newline
+\includegraphics[scale=1]{img/etm2-p2.eps}
+\newline
+\begin{center}
+Versuch zur Bestimmung der Bandpassfilterschaltung
+\end{center}
+\newline
+\includegraphics[scale=1]{img/etm2-p3.eps}
+\newpage
+\section{Messwertetabellen und Diagramme }
+\newline
+\newline
+Messwertetabellen zur Bestimmung der Phasenlage bei verschiedenen Frequenzen
+\newline
+\subsection{Hochpassfilterschaltung}
+\textbf{Tabelle zur Messreihe:Hochpass} 
+\newline
+Grenzfrequenz berechnet: 9.65 kHz 
+\newline
+Grenzfrequenz gemessen: 9,522 kHz 
+\newline
+\newline
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline Generator & Oszilloskop & Oszill. &  & Oszill. & Oszill. &  & Timer \\ 
+\hline f [kHz] & Uess [V] & Uass [V] & a [dB] & T/2 [µs] & \Delta t [µs] & \Delta \varphi Oszill. & \Delta \varphi Timer \\ 
+
+\hline\hline 9,522 & 4,04 & 2,80 & -3,18 & 52,4 & 13,2 & 45,34 & 45,02 \\ 
+\hline 1,0 & 4,00 & 0,41 & -19,83 & 500,0 & 232,0 & 83,52 & 78,20 \\ 
+\hline 2,0 & 4,00 & 0,80 & -13,98 & 252,0 & 108,0 & 77,14 & 75,48 \\ 
+\hline 5,0 & 3,99 & 1,84 & -6,72 & 100,0 & 35,0 & 63,00 & 61,85 \\ 
+\hline 7,5 & 4,00 & 2,33 & -4,29 & 67,0 & 19,0 & 51,04 & 51,63 \\ 
+\hline 8,0 & 4,00 & 2,56 & -3,88 & 62,0 & 17,0 & 49,36 & 49,87 \\ 
+\hline 8,5 & 4,00 & 2,64 & -3,61 & 59,0 & 16,0 & 48,81 & 48,19 \\ 
+\hline 9,0 & 4,00 & 2,72 & -3,35 & 55,0 & 14,0 & 45,82 & 46,58 \\ 
+\hline 9,5 & 4,00 & 1,36 & -3,19 & 146,0 & 54,0 & 46,58 & 68,76 \\ 
+\hline 10,0 & 4,00 & 2,88 & -2,85 & 50,0 & 12,4 & 43,64 & 43,62 \\ 
+\hline 15,0 & 4,00 & 3,36 & -1,51 & 33,2 & 6,0 & 32,53 & 32,64 \\ 
+\hline 20,0 & 4,00 & 3,56 & -1,01 & 24,8 & 3,6 & 26,13 & 25,80 \\ 
+\hline 50,0 & 4,00 & 3,92 & -0,22 & 9,9 & 0,5 & 9,10 & 11,16 \\ 
+\hline 100,0 & 3,98 & 3,96 & -0,04 & 5,04 & 0,12 & 4,29 & 5,70 \\ 
+
+\hline 
+\end{tabular} 
+\newline
+\newpage
+\newline
+\newline
+\bigskip
+\bigskip
+\begin{center}
+\parpic[1]{\includegraphics[scale=0.5, angle=270, width=375, high=250]{img/hochpass1.eps}}
+\end{center}
+%\picsskip{ 5}
+\bigskip
+\newline
+\newline
+\newline
+\newline
+\begin{center}
+\parpic[2]{\includegraphics[scale=0.5, angle=270, width=380, high=250]{img/hochpass2.eps}}
+\end{center}
+\newpage
+\subsection{Bandpassfilterschaltung}
+\textbf{Tabelle zur Messreihe: Bandpass}
+\newline
+Mittenfrequenz berechnet: 31,83 kHz 
+\newline
+Mittenfrequenz gemessen: 29,98 kHz 
+\newline
+\newline
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline Generator & Oszilloskop & Oszill. &  & Oszill. & Oszill. &  & Timer \\ 
+\hline f [kHz] & Uess [V] & Uass [V] & a [dB] & T/2 [µs] & \Delta t [µs] & \Delta \varphi Oszill. & \Delta \varphi Timer \\ 
+
+\hline\hline 29,98 & 4,04 & 2,12 & -5,60 & 16,6 & 0,190 & 2,060 & 4,04 \\
+\hline 22,2 & 4,02 & 0,32 & -22,26 & 22,4 & 10,6 & 85,178 & 76,09 \\
+\hline 39,8 & 4,00 & 0,304 & -22,36 & 12,5 & 5,8 & 83,520 & 89,76 \\
+\hline 25,0 & 4,00 & 0,468 & -18,61 & 19,9 & 8,8 & 79,597 & 73,60 \\
+\hline 27,5 & 4,00 & 0,908 & -12,88 & 18,1 & 6,6 & 65,600 & 62,56 \\
+\hline 28,0 & 4,02 & 1,11 & -11,18 & 17,8 & 5,8 & 58,650 & 57,06 \\
+\hline 28,5 & 4,00 & 1,35 & -9,43 & 17,4 & 4,8 & 49,660 & 48,81 \\
+\hline 29,0 & 4,00 & 1,66 & -7,64 & 17,2 & 3,6 & 37,670 & 36,17 \\
+\hline 29,5 & 4,02 & 1,95 & -6,26 & 16,9 & 1,8 & 19,170 & 17,50 \\
+\hline 30,5 & 4,00 & 1,87 & -6,63 & 16,4 & 2,4 & 26,340 & 25,59 \\
+\hline 31,0 & 4,00 & 1,59 & -8,07 & 16,6 & 3,6 & 40,500 & 41,11 \\
+\hline 31,5 & 4,00 & 1,33 & -9,56 & 15,8 & 4,5 & 51,270 & 51,95 \\
+\hline 32,0 & 4,00 & 1,12 & -11,06 & 15,5 & 5,2 & 60,390 & 59,52 \\
+\hline 32,5 & 4,00 & 0,952 & -12,47 & 15,3 & 5,4 & 63,530 & 65,05 \\
+\hline 35,0 & 4,00 & 0,552 & -17,20 & 14,2 & 5,8 & 75,189 & 79,19 \\ 
+
+\hline 
+\end{tabular}
+\newline
+\newpage
+\newline
+\newline
+\bigskip
+\bigskip
+\begin{center}
+\parpic[1]{\includegraphics[scale=0.5, angle=270, width=375, high=250]{img/bandpass1.eps}}
+\end{center}
+\newline
+\newline
+%\picsskip{5}
+\bigskip
+\newline
+\newline
+\begin{center}
+\parpic[2]{\includegraphics[scale=0.5, angle=270, width=380, high=250]{img/bandpass2.eps}}
+\end{center}
+\newpage
+\section{Diskussion und Vergleich beider Messverfahren}
+\begin{center}
+\textbf{Vergleich Oszilloskop und Timer / Counter }
+\end{center}
+\newline
+\newline
+\underline{Timer / Counter ( PM6670 ) :}
+\newline
+\newline
+Der Timer / Counter ist ein mikrocomputergesteuerter Zähler, welcher einen weiten Bereich von Frequenz- und Zeitmessfunktionen , sowie Periodendauermittelwerte, Zeitintervall - Mittelwert bestimmt. Zudem kann hiermit die Impulsdauer, Phasenverschiebung (in Grad) und Drehzahlen (U / Min) bestimmt werden.
+\newline
+Damit die Zählkreise die Signale verarbeiten können, müssen die Eingangssignale zuerst in Impulse umgewandelt. Um ein AC - Signal korrekt zu Triggern, muss die Eingangsempfindlichkeit bzw. Trigger-Hystereseband eingestellt werden. Dieses kommt besonders bei verauschten Signalen zu tragen. 
+\newline
+Vorteile bei der AC - Kopplung sind in Bezug auf Frequenzmessungen, daß keine DC - Abweichung entsteht, und ein guter DC - Überlastungsschutz. Jedoch Bei niedrigen Frequenzen bewirkt die AC - Kopplung eine Abnahme der Empfindlichkeit.
+\newline 
+Bei DC - Signalen wird der Trigger über das Triggerpegelpotentiometer eingestellt. 
+\newline
+Bei Zeitmessungen ist noch zu beachten, daß das Hystereseband so schmal wie möglich gehalten werden muss, um eine korrekte Messung zu bekommen.
+\newline
+Je nach Messart, fordert ein Timer / Counter gegensätzliche Forderungen an die Triggerung. Die Frequenzmessung bewirkt ein schmales Hystereseband eine zu hohe Empfindlichkeit.
+\newline
+Bei der Zeitintervallmessung bewirkt ein zu breites Hystereseband eine zu niedrige Empfindlichkeit, welches zu fehlerhaften Messungen von Zeitintervallmittelwerten führen kann. 
+\newline
+Bei Phasenverschiebungsmessungen werden der A und B Eingang des Timer / Counters benötigt. Die Messung erfolgt durch gleichzeitige Erfassung des Zeitintervalls und der Periodendauer der beiden Signale.
+\newline
+Um eine Genauigkeit der Phasenverschiebungsmessungen zu gewährleisten, ist die richtige Justierung des Triggerpegels beider Kanäle wichtig. Desweiteren führen unterschiedliche Flankensteilheiten zu Phasenfehlern. Wichtig ist auch beide Signale auf die gleiche Amplitude einzustellen, um Fehler zu vermeiden.
+\newline
+Die maximale Signalfrequenz (Totzeit) von 1,6 MHz darf zum Messen nicht überschritten werden.
+\newline
+Es ist wichtig beim Timer / Counter, zu wissen wie dieser funktioniert, um die Fehlerquote zu reduzieren. 
+\newline
+\newline
+\newline
+\newline
+\underline{Oszillsoksop:}
+\newline
+\newline
+Das Oszilloskop ist in diesem Fall ein digitales, welches automatisch die Fequenz bestimmt. 
+Da das Signal schon grafisch Darstellt wird, ist der Messfehler nicht so hoch wie beim Timer / Counter. 
+\newline
+Desweiteren berechnet ein digitales Oszilloskop bei richtger Konfiguration die Frequenz-, Phasen- und Zeitmessungen automatisch, welche dann nur noch abgelesen werden brauchen.
+\newline
+Weiterhin liegt die Totzeit beim Oszilloskop weit höher und ist auch mit weniger Hintergrundwissen recht einfach bedienbar. 
+
+\newline
+\newpage
+\section{Anhang: Tabellen der Messwerte}
+\end{document}

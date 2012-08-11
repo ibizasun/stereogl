@@ -1,0 +1,157 @@
+%Schriftgröße, Layout, Papierformat, Art des Dokumentes
+\documentclass[footsepline,11pt,oneside,a4paper]{scrartcl}
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+%\usepackage{scrpage2}
+\usepackage{fancyhdr} %Paket laden
+%mathem. funktionen
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%Umlaute ermöglichen
+\usepackage[utf8]{inputenc}
+%alte Rechtschreibung
+\usepackage{german}
+\usepackage{makeidx}
+\usepackage{graphicx}
+%\usepackage[backend]{graphicx}
+\usepackage{color}
+\usepackage{units}
+\usepackage{latexsym}
+\author{M.Meese/T.Fromme}
+\title{Dokumentation Stereoskopie/StereoGL}
+
+\usepackage[T1]{fontenc}
+\newcommand{\changefont}[3]{
+\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
+
+\setlength{\headheight}{100pt}
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+%\fancyhead[L]{} %Kopfzeile links
+\fancyhead[]{\includegraphics[width=\textwidth]{img/eps/fhlogoGD.eps}} %zentrierte Kopfzeile
+%\fancyhead[R]{} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+
+\fancyfoot[L]{\author} %Namen
+\fancyfoot[C]{\title} %Seitennummer
+\fancyfoot[R]{\thepage} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+\vspace{120pt}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=1]{img/eps/fhlogo.eps} 
+%\caption{Bildunterschritt}\label{name}
+\end{center}
+\end{figure}
+
+\vspace{80pt}
+\title{\hfill\\Stereoskopie in der grafischen Datenverarbeitung }
+\author{%
+	\begin{tabular}[c]{rl}
+		Michael Meese & Mat. Nr. : 206 \\
+		Thomas Fromme & Mat. Nr. : 206650 \\
+	\end{tabular}
+}
+\date{%
+	\begin{tabular}[c]{rl}
+%		Versuchstag : &  \\
+		Thema: Stereoskopie
+		Dokumentationsausarbeitung vom : & \today \\
+	\end{tabular}
+}
+
+\begin{document}
+\renewcommand{\titlepagestyle}{fancy}
+\maketitle
+\pagestyle{fancy}
+\newpage
+\changefont{ppl}{m}{n}
+\tableofcontents
+\listoffigures
+
+\newpage
+\section{Geschichte und Konzept von stereoskopischen Bildern}
+\subsection{Geschichte}
+
+
+Um räumlich sehen zu können verfügt der Mensch über zwei Augen. Dieses räumliche sehen der Umwelt begeisterte schon im Mittelalter Maler und Gelehrte wie Leonardo da Vinci, die versuchten Tiefeninformationen in ihren Gemälden zu vermitteln, in dem sie versuchten 3Dimensional zu zeichnen. Jedoch enthalten diese Gemälde keine wirkliche Tiefeninformation, da es sich hierbei nur um so genannte Flachbilder handelt, welche dem Betrachter für jedes Auge die gleiche Perspektive liefern. Eine Tiefeninformation wird hier nur angedeutet, da das Gemälde vom Zeichner so angefertigt wurde, dass es eine Vorstellung der räumlichen Perspektive wieder gibt. Aus solchen konventionellen zweidimensionalen Bildern / Gemälden können im Nachhinein also keinerlei Tiefeninformationen mathematisch rekonstruiert werden. Das gleiche gilt auch für Photographien die mit herkömmlichen Kameras angefertigt werden. Diese verfügen nur über ein Objektiv, was vergleichbar wäre mit einem Menschen der ein Auge zu kneift [HERBIG]. Für die Wahrnehmung eines räumlichen Bildes ist es also zwingend notwendig, jedem Auge des Betrachters eine spezifische Perspektive der zu visualisierenden Szene darzubieten. Dies ist mittels Stereoskopischer Techniken realisierbar. Man spricht von so genannten Stereobildern.
+
+Der Begriff „Stereoskopie“ setzt sich aus den zwei griechischen Wörtern stereo (räumlich) und skopein (sehen) zusammen. Es handelt sich hierbei um ein Verfahren bei dem paarweise Bilder (stereoskopische Halbbilder genannt) getrennt für jedes Auge angeboten werden. Die darzustellenden Raumpunkte sind durch korrespondierende Bildpunkte auf jedem Halbbild abgebildet. Aufgrund der Parallaxe sind diese ein wenig seitenverschoben zueinander (genannt: stereoskopische Deviation). Unter der sogenannten Deviation versteht man den horizontalen Abstand gleicher Bildelemente auf beiden Halbbildern zueinander. Die Deviation ist damit die Abbildung der Parallaxe [WikiStereo]. Das Prinzip der Stereoskopie ist demnach ganz einfach. Der Mensch sieht die Welt mit zwei Augen, wobei jedes Auge die Welt aus einer anderen Perspektive wahrnimmt. Durch das binokulare (beidäugige) Sehen ist es dem Mensch möglich, die Welt in drei Dimensionen wahrzunehmen. Das Gehirn verarbeitet die Halbbilder dann zu einem dreidimensionalen Abbild. Die Stereoskopie setzt bei der Zuführung der Bildinformationen an das jeweilige Auge an. Ziel ist es, wie bei dem natürlichen Sehvorgang die Augen jeweils mit einem für sie perspektivisch korrekten Bild zu versorgen. Vergleicht man stereoskopische Bilder mit herkömmlichen 2D-Bildern, so ist der wohl größte Vorteil der Stereoskopie sofort erkennbar. Es wird dem Betrachter ermöglicht, die Lage der abgebildeten Raumpunkte zu empfinden. Dies ist letztendlich auf die Repräsentation der Bilddaten zurück zu führen, da diese dem natürlichen Sehvorgang sehr nahe kommt.
+
+%Der englische Physiker Charles Wheatstone (1802-1875) gilt als der Urvater der Stereoskopie. Im Jahr 1832 hatte er bereits zwei Modelle nach seinen angaben anfertigen lassen. Anschließend erschienen 1833 Informationen über seine Experimente in der dritten Auflage der "Outlines of Human Physiology". Kurz vor der Veröffentlichung der Photographie teilte er 1838 seine Erkenntnisse der Royal Society in London mit. Bereits hier verwies er auf diverse Betrachtungsgeräte. Im gleichen Jahr noch veröffentlichte Wheatstone am King’s College London, seine ersten Forschungsergebnisse über räumliches Sehen. Er berechnete und zeichnete Stereobildpaare und konstruierte für deren Betrachtung einen Apparat, bei dem der Blick des Betrachters durch Spiegel auf die Halbbilder umgelenkt wurde (siehe Abbildung 1). Diesen Apparat nannte er Stereoskop [Stereo].
+
+%\parpic[1]{\includegraphics[scale=0.5, angle=270, width=375, high=250]{img/neweps/Spiegelstereoskop.eps}}
+\begin{figure}[htbp]
+  \centering
+  \fbox{
+		\includegraphics[scale=1]{img/neweps/Spiegelstereoskop.eps} 
+		\caption{Abbildung 1}
+		\label{Spiegelstereoskop}
+		}
+\end{figure}
+
+
+\subsection{Parallaxen bei stereoskopischen Bildern}
+
+\begin{center}
+%	\parpic[2]{\includegraphics[scale=0.5, angle=270, width=375, high=250]{img/jpgeps/Funktionsprinzip.jpg.eps}}
+\includegraphics[scale=1]{img/eps/fhlogo.eps}
+\end{center}
+Wann ein Objekt vor oder hinter der Leinwand wahrgenommen wird, soll jetzt  anhand der Parallaxe erklärt werden. Es existieren drei verschiedene Arten von Parallaxen. Hierbei handelt es sich um die so genannte „Null Parallaxe“, die „Negative Parallaxe“, sowie die „Positive Parallaxe“.
+
+
+\subsubsection{Null Parallaxe}
+
+%\begin{center}
+%	\parpic[1]{\includegraphics[scale=0.5, angle=270, width=375, high=250]{img/jpgeps/Funktionsprinzip.jpg.eps}}
+%\end{center}
+Spricht man von einer Null Parallaxe, so liegen die homologen Bildpunkte beider Bilder genau übereinander. Betrachtet man also einen Bildpunkt mit Null-Parallaxe, so bedeutet dies, dass sich die optischen Achsen in der Ebene der Leinwand schneiden (siehe Abbildung 3).
+
+
+\subsubsection{Positive Parallaxe}
+
+Bei einer positiven Parallaxe entspricht der Wert der Parallaxe dem Augabstand und die optischen Achsen beider Augen befinden sich in einer parallelen Ausrichtung. Dies geschieht in der Natur bei der Betrachtung von Objekten in sehr großer Ferne (siehe Abbildung 4).
+Sämtliche Objekte, bei denen sich die optischen Achsen hinter der Projektionswand oder gar nicht schneiden (Parallaxe-Werte zwischen der Null-Parallaxe und dem Augenabstand) erzeugen Bilder, welche hinter der Projektionswand wahrgenommen werden.
+
+
+\subsubsection{Negative Parallaxe}
+
+
+Im Fall der negativen Parallaxe, kreuzen sich die optischen Achsen vor der Bildschirm Ebene. Erzeugte Bilder dieser Art werden somit als in den Raum hineinragend wahrgenommen (siehe Abbildung 5).
+
+
+\section{Stereoskopische Verfahren}
+
+
+Die heutigen etablierten Verfahren:
+\begin{tabbing}
+\hspace{10pt}\=\kill
+\textbullet \>Infitec\\
+\textbullet \>Anaglyphen\\
+\textbullet \>Autostereoskopisches verfahren\\
+\textbullet \>Polarisationstechnik\\
+\textbullet \>Shuttertechnik\\
+\textbullet \> KMQ\\
+\end{tabbing}
+\newpage
+
+
+\newpage
+
+\section{Stereoskopie mit OpenGL }
+
+\begin{center}
+\textbf{  }
+\end{center}
+
+
+
+\newpage
+\section{Anhang:}
+
+\newpage
+\section{Quellen:}
+
+\end{document}
